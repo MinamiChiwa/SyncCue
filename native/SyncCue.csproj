@@ -8,7 +8,7 @@
     <ApplicationTitle>SyncCue</ApplicationTitle>
     <AssemblyName>SyncCue</AssemblyName>
     <RootNamespace>SyncCue</RootNamespace>
-    <Version>0.2.6</Version>
+    <Version>0.2.14</Version>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>

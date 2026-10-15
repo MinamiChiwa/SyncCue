@@ -94,6 +94,7 @@ public sealed class TunnelService : IAsyncDisposable
         }
 
         lock (_gate) _process = proc;
+        ChildProcessJob.Shared.Assign(proc);
         Update(new TunnelState
         {
             Status = TunnelStatus.Starting,

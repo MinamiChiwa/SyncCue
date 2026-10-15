@@ -1,0 +1,24 @@
+﻿Unzip and double-click the top-level SyncCue.exe (other files stay in subfolders).
+
+SyncCue native — quick start (0.2.14)
+
+Before hosting:
+- The duration box applies only when you create a room; changing it later does not retune an open room.
+- If an old room server is already bound to port 3131, stop it before launching this build.
+
+Everyday:
+- Host: create a room, copy the LAN invite; for remote guests, open the tunnel, wait until Ready, then copy the public invite.
+- Guests only: tap I'm ready (the host does not need ready). Ready sits beside Start countdown.
+- Closing the room clears every participant immediately.
+- Lead time: positive = your cue fires earlier; negative = later.
+
+cloudflared lives under tools\; you usually do not run it by hand.
+
+Chinese notes: 使用说明.txt in the same folder.
+
+——
+Author: MinamiChiwa
+Voluntary support (does not affect features):
+- Afdian: https://afdian.com/a/minamichiwa
+- Patreon: https://patreon.com/chiwaminami
+Repo: https://github.com/MinamiChiwa/SyncCue

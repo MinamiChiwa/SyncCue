@@ -34,6 +34,7 @@ public partial class MainWindow : Window
     private bool _tunnelAutoStopping;
     private bool _sliderUiReady;
     private bool _closingRoom;
+    private bool _exitCleanupDone;
     private string? _lastRoomCode;
     private bool _didAutoCollapse;
     private DateTime _statusHoldUntil = DateTime.MinValue;
@@ -86,14 +87,7 @@ public partial class MainWindow : Window
         _uiTimer.Tick += (_, _) => TickCountdown();
         _uiTimer.Start();
 
-        Closed += async (_, _) =>
-        {
-            _uiTimer.Stop();
-            _closingRoom = true;
-            await _tunnel.StopAsync();
-            await _client.DisposeAsync();
-            await _localServer.DisposeAsync();
-        };
+        Closing += OnWindowClosingCleanup;
 
         EndpointBox.TextChanged += (_, _) => UpdateEndpointHint();
         RefreshUi();
@@ -964,6 +958,51 @@ public partial class MainWindow : Window
             return false;
         }
         return true;
+    }
+
+
+    /// <summary>
+    /// Cancel close until tunnel / room-server / client are torn down.
+    /// Job Object Dispose is belt-and-suspenders so orphans die even on crash paths.
+    /// </summary>
+    private async void OnWindowClosingCleanup(object? sender, System.ComponentModel.CancelEventArgs e)
+    {
+        if (_exitCleanupDone)
+            return;
+
+        e.Cancel = true;
+        _uiTimer.Stop();
+        _closingRoom = true;
+        try
+        {
+            await _tunnel.StopAsync();
+        }
+        catch { /* ignore */ }
+        try
+        {
+            await _client.DisposeAsync();
+        }
+        catch { /* ignore */ }
+        try
+        {
+            await _localServer.DisposeAsync();
+        }
+        catch { /* ignore */ }
+        try
+        {
+            ChildProcessJob.Shared.Dispose();
+        }
+        catch { /* ignore */ }
+
+        _exitCleanupDone = true;
+        _ = Dispatcher.BeginInvoke(new Action(() =>
+        {
+            try { Close(); }
+            catch
+            {
+                try { Application.Current?.Shutdown(); } catch { /* ignore */ }
+            }
+        }));
     }
 
     private void SetStatus(string text, bool error)

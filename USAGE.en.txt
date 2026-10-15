@@ -1,6 +1,6 @@
 ﻿Unzip and double-click the top-level SyncCue.exe (other files stay in subfolders).
 
-SyncCue native — quick start (0.2.13)
+SyncCue native — quick start (0.2.14)
 
 Before hosting:
 - The duration box applies only when you create a room; changing it later does not retune an open room.

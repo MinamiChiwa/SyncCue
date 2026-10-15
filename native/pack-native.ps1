@@ -1,10 +1,10 @@
-﻿# SyncCue native green pack 0.2.12 — slim top-level + single-file exe
+﻿# SyncCue native green pack 0.2.14 — slim top-level + single-file exe
 $ErrorActionPreference = "Stop"
 $native = "D:\Working\SyncCue\sync-cue-native"
 $out = "D:\Working\SyncCue\sync-cue-native-release"
 $stage = Join-Path $out "SyncCue-native-win-x64"
 $publish = Join-Path $out "publish-tmp"
-$ver = "0.2.12"
+$ver = "0.2.14"
 
 Get-Process SyncCue, cloudflared -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
 Start-Sleep -Seconds 1

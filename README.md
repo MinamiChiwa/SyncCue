@@ -7,7 +7,7 @@
 作者／Author：**南千和（MinamiChiwa）** · [爱发电](https://afdian.com/a/minamichiwa) · [Patreon](https://patreon.com/chiwaminami)  
 赞助自愿，不影响功能。Sponsorship is voluntary and does not affect features. 本工具由 AI 辅助开发。
 
-当前可用包／Current build：**v0.2.13**
+当前可用包／Current build：**v0.2.14**
 
 ---
 
@@ -19,7 +19,7 @@
 
 ### 下载与启动
 
-1. 到 [Releases](https://github.com/MinamiChiwa/SyncCue/releases) 下载 `SyncCue-native-0.2.13-win-x64.zip`
+1. 到 [Releases](https://github.com/MinamiChiwa/SyncCue/releases) 下载 `SyncCue-native-0.2.14-win-x64.zip`
 2. 解压后双击顶层的 `SyncCue.exe`（其余文件在子目录，不用翻）
 3. 若本机 **3131** 端口还挂着旧的房间服务，请先关掉再开本包，否则可能复用旧进程
 
@@ -63,7 +63,7 @@ A small Windows app for **synced countdowns / take cues** with friends: host a r
 
 ### Download & run
 
-1. Get `SyncCue-native-0.2.13-win-x64.zip` from [Releases](https://github.com/MinamiChiwa/SyncCue/releases)
+1. Get `SyncCue-native-0.2.14-win-x64.zip` from [Releases](https://github.com/MinamiChiwa/SyncCue/releases)
 2. Unzip and double-click top-level `SyncCue.exe`
 3. If something already listens on port **3131**, stop that old room server before launching this build
 

@@ -63,6 +63,7 @@ public sealed class LocalServerHost : IAsyncDisposable
                 _process = proc;
                 Owned = true;
             }
+            ChildProcessJob.Shared.Assign(proc);
         }
         catch (Exception ex)
         {
