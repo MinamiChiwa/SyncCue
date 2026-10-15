@@ -1,0 +1,30 @@
+# Build
+**/bin/
+**/obj/
+**/publish-tmp/
+**/node_modules/
+**/.npm-cache/
+**/.electron-cache/
+**/.runtime/
+**/artifacts/
+
+# IDE / OS
+.vs/
+.idea/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local scratch / agent helpers
+_*.py
+.smoke/
+*.log
+CODEX-*
+PACK-SMOKE*
+
+native/_snip*
+native/_dur*
+native/_xaml*
+

@@ -1,0 +1,13 @@
+{
+  "name": "synccue",
+  "version": "0.2.13",
+  "private": true,
+  "description": "SyncCue room server + shared clock helpers",
+  "type": "module",
+  "scripts": {
+    "server": "node server/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
